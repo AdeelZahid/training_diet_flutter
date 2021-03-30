@@ -47,12 +47,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
           ),
           Positioned(
-            top: height * 0.38,
+            top: height * 0.36,
             left: 0,
             right: 0,
             child: Container(
-              color: Colors.grey,
-              height: height,
+              height: height * 0.65,
+              // color: Colors.grey,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -65,8 +65,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     child: Text(
                       'Meals for Today',
                       style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w700,
+                        color: Colors.black87,
+                        fontWeight: FontWeight.w500,
                         fontSize: 16.0,
                         letterSpacing: 1.2,
                       ),
