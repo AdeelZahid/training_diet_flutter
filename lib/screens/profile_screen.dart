@@ -34,7 +34,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         children: [
           Positioned(
             top: 0,
-            height: height * 0.35,
+            height: height * 0.32,
             left: 0,
             right: 0,
             child: ClipRRect(
@@ -47,7 +47,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
           ),
           Positioned(
-            top: height * 0.36,
+            top: height * 0.33,
             left: 0,
             right: 0,
             child: Container(
@@ -89,7 +89,118 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   Expanded(
                     child: Container(
-                      color: Colors.blueAccent,
+                      margin: EdgeInsets.only(bottom: 60, left: 30, right: 30),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                        gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [
+                            const Color(0xFF20008B),
+                            const Color(0xFF200087),
+                          ],
+                        ),
+                      ),
+                      child: Container(
+                        margin: EdgeInsets.symmetric(
+                          horizontal: 20.0,
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              margin: EdgeInsets.only(top: 20.0),
+                              child: Text(
+                                'Your Next Workout',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.w500,
+                                  letterSpacing: 1.1,
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 4.0),
+                            Text(
+                              'Upper Body',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 30.0,
+                                fontWeight: FontWeight.w700,
+                                letterSpacing: 1.3,
+                              ),
+                            ),
+                            SizedBox(height: 20.0),
+                            Row(
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFF5B4D9D),
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(20),
+                                    ),
+                                  ),
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Image.asset(
+                                    'assets/images/chest.png',
+                                    width: 40.0,
+                                    height: 40.0,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                SizedBox(width: 10.0),
+                                Container(
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFF5B4D9D),
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(20),
+                                    ),
+                                  ),
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Image.asset(
+                                    'assets/images/back.png',
+                                    width: 40.0,
+                                    height: 40.0,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                SizedBox(width: 10.0),
+                                Container(
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFF5B4D9D),
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(20),
+                                    ),
+                                  ),
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Image.asset(
+                                    'assets/images/biceps.png',
+                                    width: 40.0,
+                                    height: 40.0,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                SizedBox(width: 10.0),
+                                Container(
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFF5B4D9D),
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(20),
+                                    ),
+                                  ),
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Image.asset(
+                                    'assets/images/chest.png',
+                                    width: 40.0,
+                                    height: 40.0,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 ],
@@ -106,7 +217,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
             BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
           ],
-          iconSize: 40.0,
+          iconSize: 30.0,
           selectedIconTheme: IconThemeData(color: const Color(0xFF200087)),
           unselectedIconTheme: IconThemeData(color: Colors.black12),
           currentIndex: _selectedIndex,

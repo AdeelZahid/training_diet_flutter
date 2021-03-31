@@ -75,7 +75,7 @@ class MealCard extends StatelessWidget {
                         Text('${meal.timeTaken} min'),
                       ],
                     ),
-                    SizedBox(height: 16.0),
+                    SizedBox(height: 10.0),
                   ],
                 ),
               ),
