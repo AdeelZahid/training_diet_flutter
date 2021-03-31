@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:training_diet/model/meal.dart';
+import 'package:training_diet/screens/workout_screen.dart';
 import 'package:training_diet/widgets/mealcard.dart';
 import 'package:vector_math/vector_math_64.dart' as math;
 import 'package:intl/intl.dart';
@@ -170,119 +171,142 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ),
                   Expanded(
-                    child: Container(
-                      margin: EdgeInsets.only(bottom: 60, left: 30, right: 30),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                        gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [
-                            const Color(0xFF20008B),
-                            const Color(0xFF200087),
-                          ],
-                        ),
-                      ),
-                      child: Container(
-                        margin: EdgeInsets.symmetric(
-                          horizontal: 20.0,
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              margin: EdgeInsets.only(top: 20.0),
-                              child: Text(
-                                'Your Next Workout',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16.0,
-                                  fontWeight: FontWeight.w500,
-                                  letterSpacing: 1.1,
-                                ),
+                    child: OpenContainer(
+                      closedElevation: 0,
+                      transitionType: ContainerTransitionType.fade,
+                      transitionDuration: const Duration(milliseconds: 1000),
+                      closedColor: const Color(0xFFE9E9E9),
+                      openBuilder: (context, _) {
+                        return WorkoutScreen();
+                      },
+                      closedBuilder: (context, VoidCallback openContainer) {
+                        return GestureDetector(
+                          // onTap: () {
+                          //   Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) => WorkoutScreen()),
+                          //   );
+                          // },
+                          onTap: openContainer,
+                          child: Container(
+                            margin: EdgeInsets.only(
+                                bottom: 60, left: 30, right: 30),
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(30.0)),
+                              gradient: LinearGradient(
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                                colors: [
+                                  const Color(0xFF20008B),
+                                  const Color(0xFF200087),
+                                ],
                               ),
                             ),
-                            SizedBox(height: 4.0),
-                            Text(
-                              'Upper Body',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 30.0,
-                                fontWeight: FontWeight.w700,
-                                letterSpacing: 1.3,
+                            child: Container(
+                              margin: EdgeInsets.symmetric(
+                                horizontal: 20.0,
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    margin: EdgeInsets.only(top: 20.0),
+                                    child: Text(
+                                      'Your Next Workout',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.w500,
+                                        letterSpacing: 1.1,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(height: 4.0),
+                                  Text(
+                                    'Upper Body',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 30.0,
+                                      fontWeight: FontWeight.w700,
+                                      letterSpacing: 1.3,
+                                    ),
+                                  ),
+                                  SizedBox(height: 20.0),
+                                  Row(
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          color: const Color(0xFF5B4D9D),
+                                          borderRadius: BorderRadius.all(
+                                            Radius.circular(20),
+                                          ),
+                                        ),
+                                        padding: EdgeInsets.all(8.0),
+                                        child: Image.asset(
+                                          'assets/images/chest.png',
+                                          width: 40.0,
+                                          height: 40.0,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      SizedBox(width: 10.0),
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          color: const Color(0xFF5B4D9D),
+                                          borderRadius: BorderRadius.all(
+                                            Radius.circular(20),
+                                          ),
+                                        ),
+                                        padding: EdgeInsets.all(8.0),
+                                        child: Image.asset(
+                                          'assets/images/back.png',
+                                          width: 40.0,
+                                          height: 40.0,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      SizedBox(width: 10.0),
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          color: const Color(0xFF5B4D9D),
+                                          borderRadius: BorderRadius.all(
+                                            Radius.circular(20),
+                                          ),
+                                        ),
+                                        padding: EdgeInsets.all(8.0),
+                                        child: Image.asset(
+                                          'assets/images/biceps.png',
+                                          width: 40.0,
+                                          height: 40.0,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      SizedBox(width: 10.0),
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          color: const Color(0xFF5B4D9D),
+                                          borderRadius: BorderRadius.all(
+                                            Radius.circular(20),
+                                          ),
+                                        ),
+                                        padding: EdgeInsets.all(8.0),
+                                        child: Image.asset(
+                                          'assets/images/chest.png',
+                                          width: 40.0,
+                                          height: 40.0,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
                               ),
                             ),
-                            SizedBox(height: 20.0),
-                            Row(
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFF5B4D9D),
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(20),
-                                    ),
-                                  ),
-                                  padding: EdgeInsets.all(8.0),
-                                  child: Image.asset(
-                                    'assets/images/chest.png',
-                                    width: 40.0,
-                                    height: 40.0,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                SizedBox(width: 10.0),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFF5B4D9D),
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(20),
-                                    ),
-                                  ),
-                                  padding: EdgeInsets.all(8.0),
-                                  child: Image.asset(
-                                    'assets/images/back.png',
-                                    width: 40.0,
-                                    height: 40.0,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                SizedBox(width: 10.0),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFF5B4D9D),
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(20),
-                                    ),
-                                  ),
-                                  padding: EdgeInsets.all(8.0),
-                                  child: Image.asset(
-                                    'assets/images/biceps.png',
-                                    width: 40.0,
-                                    height: 40.0,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                SizedBox(width: 10.0),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFF5B4D9D),
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(20),
-                                    ),
-                                  ),
-                                  padding: EdgeInsets.all(8.0),
-                                  child: Image.asset(
-                                    'assets/images/chest.png',
-                                    width: 40.0,
-                                    height: 40.0,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
+                          ),
+                        );
+                      },
                     ),
                   ),
                 ],
