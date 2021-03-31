@@ -1,5 +1,7 @@
+import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:training_diet/model/meal.dart';
+import 'package:training_diet/screens/meal_detail_screen.dart';
 
 class MealCard extends StatelessWidget {
   final Meal meal;
@@ -21,15 +23,31 @@ class MealCard extends StatelessWidget {
           children: [
             Flexible(
               fit: FlexFit.tight,
-              child: ClipRRect(
-                borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                child: Image.asset(
-                  meal.imagePath,
-                  width: 150.0,
-                  height: 150.0,
-                  fit: BoxFit.fill,
-                ),
+
+              child: OpenContainer(
+                closedShape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
+                transitionDuration: const Duration(milliseconds: 1000),
+                openBuilder: (context, _) {
+                  return MealDetailScreen(
+                    meal: meal,
+                  );
+                },
+                closedBuilder: (context, openContainer) {
+                  return GestureDetector(
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                      child: Image.asset(
+                        meal.imagePath,
+                        width: 150.0,
+                        height: 150.0,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  );
+                },
               ),
+
               // child: Text('Adeel'),
             ),
             Flexible(
